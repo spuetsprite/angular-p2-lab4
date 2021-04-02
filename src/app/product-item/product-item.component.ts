@@ -12,16 +12,16 @@ export class ProductItemComponent implements OnInit {
   product: Product;
 
   @Output()
-  OnSelected: EventEmitter<Product> = new EventEmitter();
+  OnSelected: EventEmitter<ProductItemComponent> = new EventEmitter();
+  isSelected: boolean;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   select(){
-    this.OnSelected.emit(this.product);
-    // alert(`Product ${this.product.name}`)
-    // console.log(this.product.name)
+
+    this.OnSelected.emit(this);
   }
 
 }
